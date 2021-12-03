@@ -151,10 +151,10 @@ class PatchDataset(Dataset):
                             # Add the coordinate to the list
                             coords[markerType].append(coord)
 
-        # Convert the dictionary to a pandas dataframe
-        df = pd.DataFrame(coords)
+        # Convert the dictionary to a numpy array
+        coords = np.array(coords)
 
-        return df
+        return coords
 
     def to_file(self, file_name: Optional[str] = None):
         """Put dataset in a csv file
